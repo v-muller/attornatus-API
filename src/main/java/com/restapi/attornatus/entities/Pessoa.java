@@ -23,13 +23,21 @@ public class Pessoa implements Serializable {
     private Date dataNascimento;
 
     @OneToMany(mappedBy = "pessoa", fetch = FetchType.LAZY, cascade = { CascadeType.ALL })
-    private List<Endereco>  endereco = new ArrayList<>();
+    private List<Endereco>  enderecos = new ArrayList<>();
 
     public Pessoa(){}
 
     public Pessoa(String nome, Date dataNascimento) {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -48,11 +56,11 @@ public class Pessoa implements Serializable {
         this.dataNascimento = dataNascimento;
     }
 
-    public List<Endereco> getEndereco() {
-        return endereco;
+    public List<Endereco> getEnderecos() {
+        return enderecos;
     }
 
-    public void setEndereco(List<Endereco> endereco) {
-        this.endereco = endereco;
+    public void setEnderecos(List<Endereco> enderecos) {
+        this.enderecos = enderecos;
     }
 }
