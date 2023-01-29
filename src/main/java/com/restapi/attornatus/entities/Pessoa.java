@@ -16,7 +16,7 @@ public class Pessoa implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, name = "aluno", length = 80)
+    @Column(nullable = false, name = "nome", length = 80)
     private String nome;
 
     @Temporal(TemporalType.DATE)
