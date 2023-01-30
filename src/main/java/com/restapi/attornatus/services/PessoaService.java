@@ -95,4 +95,10 @@ public class PessoaService {
 
         pessoaRepository.delete(optionalPessoa.get());
     }
+
+    //criar endereço
+
+    //listar endereços
+
+    //poder informar qual o endereço principal
 }

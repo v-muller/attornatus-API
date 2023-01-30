@@ -1,3 +1,19 @@
 
 7
 HELP.md,1/a/1a273f73b7a477b0745593641bd708a6182c7ad5
+x
+Hsrc/main/java/com/restapi/attornatus/controllers/EnderecoController.java,c/1/c1256483eb968d55c57540432a27f62dfe9bef7d
+7
+pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
+h
+8src/main/java/com/restapi/attornatus/dtos/PessoaDTO.java,0/1/0106a77f561d385e078fc47ed434138058db7053
+v
+Fsrc/main/java/com/restapi/attornatus/exceptions/BusinessException.java,e/3/e32e86b9ba384fd6760f2c174ca951f8a8c82d80
+|
+Lsrc/main/java/com/restapi/attornatus/exceptions/EntityNotFoundException.java,f/2/f2cff1edff49f89eee10411c2a00566cc96d74b2
+r
+Bsrc/main/java/com/restapi/attornatus/exceptions/StandardError.java,9/1/918e7523b523165c50ccdc1307c3a4408b084c30
+}
+Msrc/main/java/com/restapi/attornatus/exceptions/ResourceExceptionHandler.java,c/1/c1ea49185bec521d782c8290387c2c3f6bcafedc
+i
+9src/main/java/com/restapi/attornatus/entities/Pessoa.java,e/2/e2fb5a321035d80ccc7e0567d54d93c5cdb6f6b2

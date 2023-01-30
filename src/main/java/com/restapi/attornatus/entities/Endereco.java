@@ -1,5 +1,6 @@
 package com.restapi.attornatus.entities;
 
+import com.restapi.attornatus.enums.EnderecoPrincipal;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -25,17 +26,21 @@ public class Endereco implements Serializable {
     @Column(nullable = false, name = "cidade", length = 28)
     private String cidade;
 
+    @Column(nullable = false, name = "endereco_principal")
+    private Integer principal;
+
     @ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.ALL })
     @JoinColumn(name = "pessoa_id")
     private Pessoa pessoa;
 
     public Endereco(){}
 
-    public Endereco(String logradouro, String cep, String numero, String cidade, Pessoa pessoa) {
+    public Endereco(String logradouro, String cep, String numero, String cidade, Integer principal, Pessoa pessoa) {
         this.logradouro = logradouro;
         this.cep = cep;
         this.numero = numero;
         this.cidade = cidade;
+        this.principal = principal;
         this.pessoa = pessoa;
     }
 
@@ -77,6 +82,16 @@ public class Endereco implements Serializable {
 
     public void setCidade(String cidade) {
         this.cidade = cidade;
+    }
+
+    public EnderecoPrincipal getPrincipal() {
+        return EnderecoPrincipal.valueOf(this.principal);
+    }
+
+    public void setPrincipal(EnderecoPrincipal principal) {
+        if (principal != null) {
+            this.principal = principal.getCode();
+        }
     }
 
     public Pessoa getPessoa() {

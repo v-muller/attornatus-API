@@ -2,6 +2,7 @@ package com.restapi.attornatus.dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.restapi.attornatus.entities.Pessoa;
+import com.restapi.attornatus.enums.EnderecoPrincipal;
 import org.dozer.Mapping;
 import org.springframework.hateoas.RepresentationModel;
 
@@ -23,15 +24,18 @@ public class EnderecoDTO extends RepresentationModel<EnderecoDTO> implements Ser
 
     private String cidade;
 
+    private Integer principal;
+
     private Pessoa pessoa;
 
     public EnderecoDTO(){}
 
-    public EnderecoDTO(String logradouro, String cep, String numero, String cidade, Pessoa pessoa) {
+    public EnderecoDTO(String logradouro, String cep, String numero, String cidade, Integer principal, Pessoa pessoa) {
         this.logradouro = logradouro;
         this.cep = cep;
         this.numero = numero;
         this.cidade = cidade;
+        this.principal = principal;
         this.pessoa = pessoa;
     }
 
@@ -65,6 +69,16 @@ public class EnderecoDTO extends RepresentationModel<EnderecoDTO> implements Ser
 
     public void setCidade(String cidade) {
         this.cidade = cidade;
+    }
+
+    public EnderecoPrincipal getPrincipal() {
+        return EnderecoPrincipal.valueOf(this.principal);
+    }
+
+    public void setPrincipal(EnderecoPrincipal principal) {
+        if (principal != null) {
+            this.principal = principal.getCode();
+        }
     }
 
     public Pessoa getPessoa() {
